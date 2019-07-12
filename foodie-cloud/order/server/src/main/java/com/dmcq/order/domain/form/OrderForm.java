@@ -1,5 +1,6 @@
 package com.dmcq.order.domain.form;
 
+import com.dmcq.product.common.entity.DeductStockInput;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -26,5 +27,5 @@ public class OrderForm {
     private String openid;
 
     @NotEmpty(message = "购物车不可为空")
-    private List<SimpleCartDto> items;
+    private List<DeductStockInput> items;
 }

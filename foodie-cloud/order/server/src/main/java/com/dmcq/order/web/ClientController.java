@@ -1,8 +1,8 @@
 package com.dmcq.order.web;
 
 
-import com.dmcq.order.client.ProductClient;
-import com.dmcq.order.common.response.CommonResponse;
+import com.dmcq.product.client.ProductClient;
+import com.qinpiyi.common.response.CommonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -61,10 +61,10 @@ public class ClientController {
     }
 
     //方式4（使用feign）
-    @GetMapping("/msg4")
-    public CommonResponse productMsg4(){
-        CommonResponse resp = productClient.getMsg();
-        System.out.println("4: "+resp.getMsg());
-        return resp;
-    }
+//    @GetMapping("/msg4")
+//    public CommonResponse productMsg4(){
+//        CommonResponse resp = productClient.getMsg();
+//        System.out.println("4: "+resp.getMsg());
+//        return resp;
+//    }
 }
