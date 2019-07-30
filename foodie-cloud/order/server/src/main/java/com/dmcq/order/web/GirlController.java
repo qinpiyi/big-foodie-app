@@ -1,6 +1,6 @@
 package com.dmcq.order.web;
 
-import com.dmcq.order.GirlConfig;
+import com.dmcq.order.config.GirlConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
