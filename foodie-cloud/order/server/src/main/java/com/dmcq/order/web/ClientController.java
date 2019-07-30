@@ -3,6 +3,7 @@ package com.dmcq.order.web;
 
 import com.dmcq.product.client.ProductClient;
 import com.qinpiyi.common.response.CommonResponse;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -13,10 +14,11 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @Title ClientController
- * @Description TODO
+ * @Description 跨服务通讯的四种方式
  * @Author qinhao
  * @Date 2019/7/8 19:42
  **/
+@Api(value = "客户端管理",tags = "客户端")
 @RestController
 @RequestMapping("/client")
 public class ClientController {
