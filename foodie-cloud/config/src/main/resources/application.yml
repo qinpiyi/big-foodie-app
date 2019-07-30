@@ -14,16 +14,18 @@ spring:
 #          username: dmcq-qpy
 #          password: dmcq123456
           basedir: D:\workspaces\git\github\config-repo
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+
 #server:
 #  port: 8101
