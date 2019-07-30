@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.BUILD-SNAPSHOT</version>
+        <version>2.0.0.M3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.dmcq</groupId>
@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
+        <spring-cloud.version>Finchley.M3</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -35,10 +35,10 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <dependencyManagement>
