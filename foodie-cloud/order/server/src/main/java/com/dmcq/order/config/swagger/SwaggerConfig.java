@@ -1,7 +1,6 @@
 package com.dmcq.order.config.swagger;
 
 import com.google.common.base.Predicate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.RequestHandler;
@@ -71,11 +70,11 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("订单服务 RESTful APIs").description("后台api接口文档").version("1.1").build();
+        return new ApiInfoBuilder().title("订单服务 RESTful APIs").description("后台api接口文档").version("1.2").build();
     }
 
     private ApiInfo mobileApiInfo() {
-        return new ApiInfoBuilder().title("订单服务 RESTful APIs").description("手机api接口文档").version("1.1").build();
+        return new ApiInfoBuilder().title("订单服务 RESTful APIs").description("手机api接口文档").version("1.2").build();
     }
 
 }

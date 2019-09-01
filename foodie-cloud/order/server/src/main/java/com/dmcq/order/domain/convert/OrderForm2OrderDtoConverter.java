@@ -3,6 +3,7 @@ package com.dmcq.order.domain.convert;
 import com.dmcq.order.domain.dto.OrderDto;
 import com.dmcq.order.domain.entity.OrderDetail;
 import com.dmcq.order.domain.form.OrderForm;
+import com.dmcq.product.common.entity.DeductStockInput;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -26,9 +27,9 @@ public class OrderForm2OrderDtoConverter {
 
 //        List<OrderDetail> orderDetailList= JSONObject.parseArray(orderForm.getItems(), OrderDetail.class);
         List<OrderDetail> orderDetailList=new ArrayList<OrderDetail>();
-        List<SimpleCartDto> items = orderForm.getItems();
+        List<DeductStockInput> items = orderForm.getItems();
 
-        for(SimpleCartDto item:items){
+        for(DeductStockInput item:items){
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setProductId(item.getProductId());
             orderDetail.setProductQuantity(item.getProductQuantity());

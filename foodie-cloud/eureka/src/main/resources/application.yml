@@ -1,12 +1,15 @@
 eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: eureka3 #在系统的hosts文件中配置eureka1映射到127.0.0.1
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: false #使用Eureka集群时，保险起见设置为true
+      defaultZone: http://eureka1:8100/eureka/,http://eureka2:8200/eureka/,http://eureka3:8300/eureka/
+    register-with-eureka: true #使用Eureka集群时，保险起见设置为true
   server:
-    enable-self-preservation: false #EurekaServer自我保护，开发环境下可关闭，生产环境下应开启(true)
+    enable-self-preservation: true #EurekaServer自我保护，开发环境下可关闭，生产环境下应开启(true)
 spring:
   application:
     name: eureka
-server:
-  port: 8761
+#server:
+#  port: 8100

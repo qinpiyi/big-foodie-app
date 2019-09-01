@@ -12,6 +12,7 @@ import com.qinpiyi.common.response.CommonResponseUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,9 @@ public class ProductController {
     ProductInfoService productInfoService;
     @Autowired
     ProductCategoryService productCategoryService;
+
+    @Autowired
+    AmqpTemplate amqpTemplate;
 
     @ApiOperation(value = "查询已上架商品列表")
     @GetMapping("/list")
@@ -80,5 +84,10 @@ public class ProductController {
     public CommonResponse deductStock(@RequestBody List<SimpleCartDto> list){
         productInfoService.deductStock(list);
         return CommonResponseUtil.success("扣库存成功");
+    }
+
+    @GetMapping("/mqTest")
+    public void mqTest(){
+        amqpTemplate.convertAndSend("myQueue","test");
     }
 }

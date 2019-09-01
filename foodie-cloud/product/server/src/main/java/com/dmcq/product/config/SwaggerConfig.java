@@ -78,11 +78,11 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("商品服务 RESTful APIs").description("后台api接口文档").version("1.1").build();
+        return new ApiInfoBuilder().title("商品服务 RESTful APIs").description("后台api接口文档").version("1.2").build();
     }
 
     private ApiInfo mobileApiInfo() {
-        return new ApiInfoBuilder().title("商品服务 RESTful APIs").description("手机api接口文档").version("1.1").build();
+        return new ApiInfoBuilder().title("商品服务 RESTful APIs").description("手机api接口文档").version("1.2").build();
     }
 
 }

@@ -1,7 +1,8 @@
 package com.dmcq.order.mapper;
 
-import com.dmcq.order.common.mapper.MyBaseMapper;
 import com.dmcq.order.domain.entity.OrderMaster;
+import com.qinpiyi.common.mapper.MyBaseMapper;
+
 /**
  * @Title orderMasterMapper
  * @Description TODO

@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+    ip-address: 127.0.0.1
+  client:
+    register-with-eureka: true #使用Eureka集群时，保险起见设置为true
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/,http://192.168.1.117:8200/eureka/
+  server:
+    enable-self-preservation: true #EurekaServer自我保护，开发环境下可关闭，生产环境下应开启(true)
+spring:
+  application:
+    name: eureka

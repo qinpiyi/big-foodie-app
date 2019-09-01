@@ -14,7 +14,8 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class OrderMaster{
+public class OrderMaster implements Serializable{
+	private static final long serialVersionUID = 1L;
 	/**订单ID */
 	@Id
 	@ApiModelProperty(value = "订单ID ")

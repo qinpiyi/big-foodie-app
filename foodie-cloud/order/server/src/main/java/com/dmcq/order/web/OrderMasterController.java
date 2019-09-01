@@ -1,7 +1,7 @@
 package com.dmcq.order.web;
 
-import com.dmcq.order.common.controller.BaseController;
 import com.dmcq.order.domain.entity.OrderMaster;
+import com.qinpiyi.common.controller.BaseController;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

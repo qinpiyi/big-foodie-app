@@ -1,5 +1,6 @@
 package com.dmcq.order.domain.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -19,7 +20,8 @@ import javax.persistence.Id;
 **/
 @Data
 @Entity
-public class OrderDetail {
+public class OrderDetail implements Serializable {
+	private static final long serialVersionUID = 1L;
 	/**主键 */
 	@Id
 	@ApiModelProperty(value = "主键 ")

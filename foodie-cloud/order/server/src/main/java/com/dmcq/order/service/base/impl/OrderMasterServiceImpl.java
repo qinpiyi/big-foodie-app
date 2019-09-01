@@ -1,8 +1,8 @@
 package com.dmcq.order.service.base.impl;
 
-import com.dmcq.order.common.service.BaseServiceImpl;
 import com.dmcq.order.domain.entity.OrderMaster;
 import com.dmcq.order.service.base.OrderMasterService;
+import com.qinpiyi.common.service.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

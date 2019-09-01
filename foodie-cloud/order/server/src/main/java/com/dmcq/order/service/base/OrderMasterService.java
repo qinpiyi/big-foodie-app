@@ -1,7 +1,7 @@
 package com.dmcq.order.service.base;
 
-import com.dmcq.order.common.service.BaseService;
 import com.dmcq.order.domain.entity.OrderMaster;
+import com.qinpiyi.common.service.BaseService;
 
 /**
  * @Title OrderMasterService

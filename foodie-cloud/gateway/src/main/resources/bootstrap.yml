@@ -1,0 +1,37 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/,http://localhost:8200/eureka/,http://localhost:8300/eureka/
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: dev     # 环境
+#      label: develop   # 分支
+server:
+  port: 8000
+#  配置访问/application/routes查看所有路由的权限
+management:
+  security:
+    enabled: false
+
+#配置路由
+zuul:
+  routes:
+#    方式一（名称随意）
+    myProduct:
+      path: /dmcq-product/**
+      serviceId: product
+#    方式二（以服务名为key）
+    order: /dmcq-orde/**
+#    排除某些路由（拒绝访问）
+  ignored-patterns:
+    - /product/product/mqTest
+    - /dmcq-product/product/mqTest
+#    使用通配符**批量配置
+    - /**/order/master/**
