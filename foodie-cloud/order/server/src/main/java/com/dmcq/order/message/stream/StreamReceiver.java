@@ -19,13 +19,13 @@ import org.springframework.stereotype.Component;
 public class StreamReceiver {
 
     @StreamListener(StreamClient.INPUT)
-    @SendTo(StreamClient.INPUT2)
+    @SendTo(StreamClient.INPUT1)
     public String process(Object message){
         log.info("StreamMessage: {}",message);
         return "received!";
     }
 
-    @StreamListener(StreamClient.INPUT2)
+    @StreamListener(StreamClient.INPUT1)
     public void process2(Object message){
         log.info("StreamMessage2: {}",message);
     }

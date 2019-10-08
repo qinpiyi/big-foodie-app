@@ -1,7 +1,9 @@
 eureka:
+  instance:
+    status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/swagger-ui.html
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/,http://localhost:8200/eureka/,http://localhost:8300/eureka/
+      defaultZone: http://localhost:8100/eureka/ # ,http://localhost:8200/eureka/,http://localhost:8300/eureka/
 
 spring:
   application:
@@ -13,12 +15,11 @@ spring:
         service-id: config
       profile: dev     # 环境
 #      label: develop   # 分支
-server:
-  port: 8000
+
 #  配置访问/application/routes查看所有路由的权限
-management:
-  security:
-    enabled: false
+#management:
+#  security:
+#    enabled: false
 
 #配置路由
 zuul:
@@ -35,3 +36,9 @@ zuul:
     - /dmcq-product/product/mqTest
 #    使用通配符**批量配置
     - /**/order/master/**
+
+swagger:
+  apis: order,product
+#    - eureka
+#    - config
+#    - gateway

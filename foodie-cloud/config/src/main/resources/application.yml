@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/,http://localhost:8200/eureka/,http://localhost:8300/eureka/
+      defaultZone: http://localhost:8100/eureka/ #,http://localhost:8200/eureka/,http://localhost:8300/eureka/
 
 spring:
   application:
@@ -14,18 +14,17 @@ spring:
 #          username: dmcq-qpy
 #          password: dmcq123456
           basedir: D:\workspaces\git\github\config-repo
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 
 #management:
 #  endpoints:
 #    web:
-#      exposure:
-#        include: "*"
+#      exposure: "*"
 
 #server:
 #  port: 8101
