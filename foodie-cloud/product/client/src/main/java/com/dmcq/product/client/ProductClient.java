@@ -3,7 +3,7 @@ package com.dmcq.product.client;
 import com.dmcq.product.common.entity.DeductStockInput;
 import com.dmcq.product.common.entity.ProductInfoOutPut;
 import com.qinpiyi.common.response.CommonResponse;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
