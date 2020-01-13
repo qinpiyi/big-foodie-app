@@ -1,0 +1,16 @@
+eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: eureka2 #在系统的hosts文件中配置eureka1映射到127.0.0.1
+    status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/swagger-ui.html
+  client:
+    service-url:
+      defaultZone: http://eureka1:8100/eureka/,http://eureka2:8200/eureka/
+    register-with-eureka: true #使用Eureka集群时，保险起见设置为true
+  server:
+    enable-self-preservation: true #EurekaServer自我保护，开发环境下可关闭，生产环境下应开启(true)
+spring:
+  application:
+    name: eureka
+server:
+  port: 8200
