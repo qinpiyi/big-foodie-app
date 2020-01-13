@@ -1,7 +1,11 @@
 eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 106.13.117.203
+  #    hostname: ${spring.cloud.client.ipAddress}
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/ #,http://localhost:8200/eureka/,http://localhost:8300/eureka/
+      defaultZone: http://eureka1:8100/eureka/,http://eureka2:8200/eureka/
 
 spring:
   application:
@@ -11,20 +15,21 @@ spring:
       server:
         git:
           uri: https://github.com/qinpiyi/config-repo.git
+          basedir: /app/git/github/config-repo
+#          basedir: D:\workspaces\git\github\config-repo
 #          username: dmcq-qpy
 #          password: dmcq123456
-          basedir: D:\workspaces\git\github\config-repo
   rabbitmq:
-    host: localhost
+    host: 106.13.117.203
     port: 5672
     username: guest
     password: guest
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
-#management:
-#  endpoints:
-#    web:
-#      exposure: "*"
-
-#server:
-#  port: 8101
+server:
+  port: 8101

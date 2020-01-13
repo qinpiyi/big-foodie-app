@@ -3,7 +3,7 @@ eureka:
     status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/swagger-ui.html
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/ # ,http://localhost:8200/eureka/,http://localhost:8300/eureka/
+      defaultZone: http://106.13.117.203:8100/eureka/,http://106.13.117.203:8200/eureka/
 
 spring:
   application:
@@ -16,29 +16,34 @@ spring:
       profile: dev     # 环境
 #      label: develop   # 分支
 
-#  配置访问/application/routes查看所有路由的权限
 #management:
-#  security:
-#    enabled: false
-
-#配置路由
-zuul:
-  routes:
-#    方式一（名称随意）
-    myProduct:
-      path: /dmcq-product/**
-      serviceId: product
-#    方式二（以服务名为key）
-    order: /dmcq-orde/**
-#    排除某些路由（拒绝访问）
-  ignored-patterns:
-    - /product/product/mqTest
-    - /dmcq-product/product/mqTest
-#    使用通配符**批量配置
-    - /**/order/master/**
-
-swagger:
-  apis: order,product
-#    - eureka
-#    - config
-#    - gateway
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"    # 配置访问/application/routes查看所有路由的权限
+#
+#ribbon:        #设置ribbon的超时时间小于zuul的超时时间
+#  ReadTimeout: 10000
+#  ConnectTimeout: 10000
+#
+##配置路由
+#zuul:
+#  host:
+#    connect-timeout-millis: 15000  #HTTP连接超时大于Hystrix的超时时间
+#    socket-timeout-millis: 60000   #socket超时
+#  routes:
+#    productServer:
+#      path: /product/**
+#      serviceId: product
+#      sensitiveHeaders:       # 配置敏感头过滤为空，否则无法传递Cookie
+#    orderServer:
+#      path: /order/**
+#      serviceId: order
+#      sensitiveHeaders:
+#  ignored-patterns:            # 排除某些路由（拒绝访问）
+#    - /product/product/mqTest
+#    - /dmcq-product/product/mqTest
+#    - /**/order/master/**     # 使用通配符**批量配置
+#
+#swagger:
+#  apis: order,product         #配置需要显示swagger api文档的服务名

@@ -17,7 +17,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +45,9 @@ public class ProductController {
 
     @ApiOperation(value = "查询已上架商品列表")
     @GetMapping("/list")
-    public CommonResponse list() {
+    public CommonResponse list(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        System.out.println(Arrays.asList(cookies));
         //查询所有在架商品
         List<ProductInfo> productList = productInfoService.findUpAll();
         //获取类目列表
