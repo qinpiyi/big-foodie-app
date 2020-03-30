@@ -4,7 +4,8 @@ eureka:
     status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/swagger-ui.html
   client:
     service-url:
-      defaultZone: http://106.13.117.203:8100/eureka/,http://106.13.117.203:8200/eureka/
+      defaultZone: http://eureka1:8100/eureka/,http://eureka2:8200/eureka/
+#      defaultZone: http://106.13.117.203:8100/eureka/,http://106.13.117.203:8200/eureka/
 
 spring:
   application:

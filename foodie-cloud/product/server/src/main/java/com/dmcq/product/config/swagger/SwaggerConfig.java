@@ -30,28 +30,23 @@ public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi() {
-        // 添加head参数start
-        ParameterBuilder tokenPar = new ParameterBuilder();
+        // 添加token输入框
         List<Parameter> pars = new ArrayList<Parameter>();
+        ParameterBuilder tokenPar = new ParameterBuilder();
         tokenPar.name("Auth-Token").description("令牌").modelRef(new ModelRef("string")).parameterType("header")
                 .required(false).build();
         pars.add(tokenPar.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
+                .apiInfo(new ApiInfoBuilder()
+                        .title("商品服务API")
+                        .description("商品服务")
+                        .termsOfServiceUrl("https://github.com/qinpiyi")
+                        .version("1.0.0")
+                        .build())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.dmcq.product.web"))
                 .paths(PathSelectors.any())
                 .build().globalOperationParameters(pars);
     }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("商品服务API")
-                .description("商品服务")
-                .termsOfServiceUrl("https://github.com/qinpiyi")
-                .version("1.0.0")
-                .build();
-    }
-
 }

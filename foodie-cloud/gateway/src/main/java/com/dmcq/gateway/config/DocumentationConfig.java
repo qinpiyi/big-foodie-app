@@ -41,7 +41,7 @@ public class DocumentationConfig  implements SwaggerResourcesProvider {
 //            resources.add(swaggerResource(name, "/" + name + docPath, version));
 //        });
         List<String> services = discoveryClient.getServices();
-        System.out.println(services);
+        //System.out.println(services);
         discoveryClient.getServices().stream().filter(s -> apis.contains(s)).forEach(name -> {
             resources.add(swaggerResource(name, "/" + name + docPath, version));
         });

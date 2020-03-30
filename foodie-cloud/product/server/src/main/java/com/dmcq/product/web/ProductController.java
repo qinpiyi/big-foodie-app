@@ -46,8 +46,6 @@ public class ProductController {
     @ApiOperation(value = "查询已上架商品列表")
     @GetMapping("/list")
     public CommonResponse list(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        System.out.println(Arrays.asList(cookies));
         //查询所有在架商品
         List<ProductInfo> productList = productInfoService.findUpAll();
         //获取类目列表
